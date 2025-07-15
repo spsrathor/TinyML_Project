@@ -1,49 +1,8 @@
-/* Edge Impulse ingestion SDK
- * Copyright (c) 2022 EdgeImpulse Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
-// If your target is limited in memory remove this macro to save 10K RAM
 #define EIDSP_QUANTIZE_FILTERBANK   0
-
-/**
- * Define the number of slices per model window. E.g. a model window of 1000 ms
- * with slices per model window set to 4. Results in a slice size of 250 ms.
- * For more info: https://docs.edgeimpulse.com/docs/continuous-audio-sampling
- */
 #define EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW 4
-
-/*
- ** NOTE: If you run into TFLite arena allocation issue.
- **
- ** This may be due to may dynamic memory fragmentation.
- ** Try defining "-DEI_CLASSIFIER_ALLOCATION_STATIC" in boards.local.txt (create
- ** if it doesn't exist) and copy this file to
- ** `<ARDUINO_CORE_INSTALL_PATH>/arduino/hardware/<mbed_core>/<core_version>/`.
- **
- ** See
- ** (https://support.arduino.cc/hc/en-us/articles/360012076960-Where-are-the-installed-cores-located-)
- ** to find where Arduino installs cores on your machine.
- **
- ** If the problem persists then there's not enough memory for this model and application.
- */
-
-/* Includes ---------------------------------------------------------------- */
 #include <PDM.h>
 #include <keyword_spotting_inferencing.h>
 
-/** Audio buffers, pointers and selectors */
 typedef struct {
     signed short *buffers[2];
     unsigned char buf_select;
@@ -55,7 +14,7 @@ typedef struct {
 static inference_t inference;
 static bool record_ready = false;
 static signed short *sampleBuffer;
-static bool debug_nn = false; // Set this to true to see e.g. features generated from the raw signal
+static bool debug_nn = false; 
 static int print_results = -(EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW);
 
 /**
