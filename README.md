@@ -46,8 +46,8 @@ The system uses machine learning models trained with Edge Impulse to recognize s
 ## Usage
 
 ### Project 1: ON/OFF Control (`on_off/` - Model A)
-- **"ON"** - Turns the LED on (red LED turns off on Nano 33 BLE)
-- **"OFF"** - Turns the LED off (red LED turns on on Nano 33 BLE)
+- **"ON"** - Turns the LED on
+- **"OFF"** - Turns the LED off
 
 ### Project 2: Multiple Commands (`multiple_cmds/` - Model B)
 - **"ON"** or **"UP"** - Turns the LED on
@@ -64,5 +64,5 @@ The system uses machine learning models trained with Edge Impulse to recognize s
 - **Training Platform**: Edge Impulse
 - **Model Type**: Neural Network for audio classification
 - **Classes**: 
-  - **Model A** - ON/OFF model: ["ON", "OFF"]
-  - **Model B** - Multiple commands model: ["ON", "OFF", "UP", "DOWN"]
+  - **Model A** - Two voice commands model: ["ON", "OFF"]
+  - **Model B** - Four voice commands model: ["ON", "OFF", "UP", "DOWN"]
