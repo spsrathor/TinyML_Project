@@ -24,15 +24,15 @@ The system uses machine learning models trained with Edge Impulse to recognize s
 
 - **Arduino IDE**
 - **Edge Impulse Libraries**:
-  - `ei-keyword_spotting-arduino-1.0.2.zip` (for on_off project)
-  - `ei-multiple_voice-arduino-1.0.1.zip` (for multiple_cmds project)
+  - `ei-keyword_spotting-arduino-1.0.2.zip` (for on_off project ***Model A***)
+  - `ei-multiple_voice-arduino-1.0.1.zip` (for multiple_cmds project ***Model B***)
 
 
 ### Install Edge Impulse Libraries
 1. In Arduino IDE, go to **Sketch > Include Library > Add .ZIP Library**
 2. Select and install the provided Edge Impulse library files:
-   - `ei-keyword_spotting-arduino-1.0.2.zip`
-   - `ei-multiple_voice-arduino-1.0.1.zip`
+   - `ei-keyword_spotting-arduino-1.0.2.zip` -  ***Model A***
+   - `ei-multiple_voice-arduino-1.0.1.zip` - ***Model B***
 
 ### Upload the Code
 1. Connect your Arduino Nano 33 BLE Sense to your computer
@@ -45,11 +45,11 @@ The system uses machine learning models trained with Edge Impulse to recognize s
 
 ## Usage
 
-### Project 1: ON/OFF Control (`on_off/`)
+### Project 1: ON/OFF Control (`on_off/` - Model A)
 - **"ON"** - Turns the LED on (red LED turns off on Nano 33 BLE)
 - **"OFF"** - Turns the LED off (red LED turns on on Nano 33 BLE)
 
-### Project 2: Multiple Commands (`multiple_cmds/`)
+### Project 2: Multiple Commands (`multiple_cmds/` - Model B)
 - **"ON"** or **"UP"** - Turns the LED on
 - **"OFF"** or **"DOWN"** - Turns the LED off
 
@@ -64,5 +64,5 @@ The system uses machine learning models trained with Edge Impulse to recognize s
 - **Training Platform**: Edge Impulse
 - **Model Type**: Neural Network for audio classification
 - **Classes**: 
-  - ON/OFF model: ["ON", "OFF"]
-  - Multiple commands model: ["ON", "OFF", "UP", "DOWN"]
+  - **Model A** - ON/OFF model: ["ON", "OFF"]
+  - **Model B** - Multiple commands model: ["ON", "OFF", "UP", "DOWN"]
